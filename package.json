@@ -4,14 +4,16 @@
   "description": "[Heroku](link til heroku)\r [Test rapport](link til testrapport)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run test:client && npm run test:server",
     "dev": "concurrently npm:dev:client npm:dev:server",
     "dev:client": "cd client && npm run dev",
     "dev:server": "cd server && npm run dev",
-    "build": "npm run build:server && npm run build:client",
+    "build": "npm run build:client && npm run build:server",
     "build:server": "cd server && npm run build",
-    "start": "cd server &&  npm start",
-    "build:client": "cd client && npm run build"
+    "start": "cd server && npm start",
+    "build:client": "cd client && npm run build",
+    "test:client": "cd client && npm test",
+    "test:server": "cd server && npm test"
   },
   "repository": {
     "type": "git",

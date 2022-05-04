@@ -12,6 +12,14 @@ async function fetchJSON(url) {
   return await res.json();
 }
 
+function NewsCard({ news: { title } }) {
+  return (
+    <div>
+      <h3>{title}</h3>
+    </div>
+  );
+}
+
 function NewsOverview() {
   const { loading, error, data } = useLoading(async () => fetchJSON("/api/"));
 
@@ -33,7 +41,7 @@ function NewsOverview() {
       <h1>News overview</h1>
       <ul>
         {data.map((n) => (
-          <li key={n.title}>{n.title}</li>
+          <NewsCard key={n.title} n={n} />
         ))}
       </ul>
     </div>
