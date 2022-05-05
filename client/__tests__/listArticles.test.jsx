@@ -47,7 +47,7 @@ describe("ListNews component", () => {
     });
     expect(
       Array.from(domElement.querySelectorAll("h3")).map((e) => e.innerHTML)
-    ).toEqual(["Topic: Topic 1", "Article 1", "Topic: Topic 2", "Article 2"]);
+    ).toEqual(["Article 1", "Topic: Topic 1", "Article 2", "Topic: Topic 2"]);
     expect(domElement.innerHTML).toMatchSnapshot();
   });
 
