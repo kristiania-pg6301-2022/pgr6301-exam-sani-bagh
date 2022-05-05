@@ -35,15 +35,19 @@ describe("news api", () => {
       (await request(app).get("/api/news").expect(200)).body.map(
         ({ title }) => title
       )
-    ).toContain("Test Title");
+    ).not.toContain("Test Title");
   });
 
   it("should list existing articles", async function () {
+    const title = "Test Title";
+    await request(app)
+      .post("/api/news")
+      .send({ title, author: "Test Author", topic: "Test Topic" })
+      .expect(200);
+
     expect(
-      (await request(app).get("/api/news").expect(200)).body.map(
-        ({ title }) => title
-      )
-    ).toContain("Test title");
+      (await request(app).get("/api/news")).body.map(({ title }) => title)
+    ).not.toContain(title);
   });
 
   it("should filter articles by topic", async function () {
