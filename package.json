@@ -5,15 +5,21 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run test:client && npm run test:server",
+    "test:coverage": "npm run test:client:coverage && npm run test:server:coverage",
+    "test:client": "cd client && npm test",
+    "test:client:coverage": "cd client && npm test -- --collectCoverage",
+    "test:server": "cd server && npm test",
+    "test:server:coverage": "cd server && npm test -- --collectCoverage",
+    "build": "npm run build:server && npm run build:client",
+    "build:client": "cd client && npm run build",
+    "build:server": "cd server && npm run build",
     "dev": "concurrently npm:dev:client npm:dev:server",
     "dev:client": "cd client && npm run dev",
     "dev:server": "cd server && npm run dev",
-    "build": "npm run build:client && npm run build:server",
-    "build:server": "cd server && npm run build",
     "start": "cd server && npm start",
-    "build:client": "cd client && npm run build",
-    "test:client": "cd client && npm test",
-    "test:server": "cd server && npm test"
+    "postinstall": "npm run install:client && npm run install:server",
+    "install:client": "cd client && npm install --include=dev",
+    "install:server": "cd server && npm install"
   },
   "repository": {
     "type": "git",
