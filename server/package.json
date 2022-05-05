@@ -43,6 +43,7 @@
   "jest": {
     "collectCoverageFrom": [
       "**/*.js",
+      "!loginApi.js",
       "!server.js",
       "!coverage/**"
     ]
