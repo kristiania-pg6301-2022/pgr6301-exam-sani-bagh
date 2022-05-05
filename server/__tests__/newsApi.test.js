@@ -38,7 +38,7 @@ describe("news api", () => {
     ).not.toContain("Test Title");
   });
 
-  it("should list existing articles", async function () {
+  it("should list filtered articles", async function () {
     const title = "Test Title";
     await request(app)
       .post("/api/news")
@@ -48,6 +48,20 @@ describe("news api", () => {
     expect(
       (await request(app).get("/api/news")).body.map(({ title }) => title)
     ).not.toContain(title);
+  });
+
+  it("should list all articles", async function () {
+    const category = "Test category";
+    await request(app).post("/api/news/all").send({
+      title: "Test title",
+      author: "Test Author",
+      category,
+      text: "Text",
+    });
+
+    expect(
+      (await request(app).get("/api/news/all")).body.map(({ title }) => title)
+    ).not.toContain(category);
   });
 
   it("should filter articles by topic", async function () {
