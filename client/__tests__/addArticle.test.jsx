@@ -19,7 +19,7 @@ describe("add new article compoment", () => {
       Array.from(domElement.querySelectorAll("form label strong")).map(
         (e) => e.innerHTML
       )
-    ).toEqual(["Title:", "Author:", "Topic:"]);
+    ).toEqual(["Title:", "Author:", "Topic:", "Text:"]);
   });
 
   it("should add article on submit", function () {
@@ -46,6 +46,7 @@ describe("add new article compoment", () => {
     Simulate.submit(domElement.querySelector("form"));
     expect(createArticle).toBeCalledWith({
       title,
+      text: "",
       author: "Test Author",
       topic: "",
     });

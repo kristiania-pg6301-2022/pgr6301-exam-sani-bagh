@@ -1,29 +1,12 @@
 import { fetchJSON } from "../lib/fetchJSON";
 import { useLoading } from "../useLoading";
 
-export function Profile() {
-  const { loading, data, error } = useLoading(async () => {
-    return await fetchJSON("/api/login");
-  });
-
-  if (loading) {
-    return <div>Please wait...</div>;
-  }
-  if (error) {
-    return <div>Error! {error.toString()}</div>;
-  }
-
+export function Profile({ user }) {
   return (
     <div>
-      <h1>
-        Profile for {data.name || data.pid}
-        {data.email && <span>({data.email})</span>}
-      </h1>
-      {data.picture && (
-        <div>
-          <img src={data.picture} alt={"Profile picture"} />
-        </div>
-      )}
+      <h1>Profile</h1>
+      <pre>{JSON.stringify(user, undefined, "  ")}</pre>
+      <h1>{user.name}</h1>
     </div>
   );
 }
