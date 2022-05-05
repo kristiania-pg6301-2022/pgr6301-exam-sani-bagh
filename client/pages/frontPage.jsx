@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import React from "react";
 
 export function FrontPage() {
   return (
@@ -7,10 +6,14 @@ export function FrontPage() {
       <h1>News Database</h1>
       <ul>
         <li>
-          <Link to={"/news"}>List news</Link>
+          <Link to={"/news"} className="link">
+            List news
+          </Link>
         </li>
         <li>
-          <Link to={"/login"}>Add new article</Link>
+          <Link to={"/login"} className="link">
+            Add new article
+          </Link>
         </li>
       </ul>
     </div>

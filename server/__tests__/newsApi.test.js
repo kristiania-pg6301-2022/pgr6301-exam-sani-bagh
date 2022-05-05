@@ -42,4 +42,18 @@ describe("news api", () => {
       )
     ).toContain("Test Title");
   });
+
+  it("should filer articles by topic", async function () {
+    const title = "Test Title";
+    await request(app)
+      .post("/api/news")
+      .send({ title, author: "Test Author", topic: "Test Topic" })
+      .expect(200);
+
+    expect(
+      (await request(app).get("/api/news?topic=Test+Topic")).body.map(
+        ({ title }) => title
+      )
+    ).not.toEqual(title);
+  });
 });
