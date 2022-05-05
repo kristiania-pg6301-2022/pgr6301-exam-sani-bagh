@@ -25,8 +25,16 @@ Dette er versjonene vi brukte under forelesningene om som er validert som ok:
 ## Egenutfylling av funksjonelle krav
 
 * [ ] *legg inn krav fra eksamentekst*
-  * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] *legg inn krav fra eksamentekst*
+* [x] Create app with npm and add all scripts
+* [x] Fix react
+* [x] Fix prettier
+* [x] Fix heroku
+* [x] Fix mongodb
+* [x] Connect backend with frontend
+* [x] Add test
+* [x] Add test coverage and github actions
+* [x] Fix login with google
+* [-] Fix login with microsoft
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
 
 ## Egenutfylling av tekniske krav
