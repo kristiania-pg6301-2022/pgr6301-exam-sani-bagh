@@ -7,7 +7,6 @@ import { NewsApiContext } from "../newsApiContext";
 
 describe("login page", () => {
   it("should redirect to login with google", async () => {
-    // replace window.location to be able to detect redirects
     const location = new URL("https://www.example.com");
     delete window.location;
     window.location = new URL(location);

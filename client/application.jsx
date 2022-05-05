@@ -7,7 +7,7 @@ import { LoginPage } from "./pages/loginPage";
 import { useLoading } from "./useLoading";
 import { NewsApiContext } from "./newsApiContext";
 import { Profile } from "./pages/profile";
-import { ListNews } from "./pages/listNews";
+import { ListAllNews, ListNews } from "./pages/listNews";
 import { AddNewArticle } from "./pages/addNewArticle";
 
 function UserActions({ user }) {
@@ -48,6 +48,7 @@ export function Application() {
         <Routes>
           <Route path={"/"} element={<FrontPage />} />
           <Route path={"/news"} element={<ListNews />} />
+          <Route path={"/news/all"} element={<ListAllNews />} />
           <Route path={"/news/new"} element={<AddNewArticle />} />
           <Route
             path={"/login/*"}

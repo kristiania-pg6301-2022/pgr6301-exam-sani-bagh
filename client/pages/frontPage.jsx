@@ -4,11 +4,16 @@ import React from "react";
 export function FrontPage() {
   return (
     <div>
-      <h1>News Database</h1>
+      <h1>Daily News</h1>
       <ul>
         <li>
+          <Link to={"/news/all"} className="link">
+            List All News
+          </Link>
+        </li>
+        <li>
           <Link to={"/news"} className="link">
-            List news
+            Search news
           </Link>
         </li>
         <li>

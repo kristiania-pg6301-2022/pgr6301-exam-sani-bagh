@@ -29,6 +29,24 @@ export function NewsApi(mongoDatabase) {
     res.json(news);
   });
 
+  router.get("/all", async (req, res) => {
+    const news = await mongoDatabase
+      .collection("articles")
+      .find()
+      .map(({ title, author, category, text }) => ({
+        title,
+        author,
+        category,
+        text,
+      }))
+      .limit(100)
+      .toArray();
+    if (!news) {
+      res.sendStatus(404);
+    }
+    res.json(news);
+  });
+
   router.post("/", (req, res) => {
     const { title, author, category, text } = req.body;
     mongoDatabase
