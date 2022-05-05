@@ -45,6 +45,8 @@ Dette er versjonene vi brukte under forelesningene om som er validert som ok:
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
 * [x] OpenID Connect
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
+  * Klarte å fikse å logge inn med google, men ikke med active directory
+  * Fikk error "invalid_grant". Prøvde å fikse grant i azure, men det fungerte ikke
 * [ ] Web Sockets
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
 * [x] Jest med dokumentert testdekning
