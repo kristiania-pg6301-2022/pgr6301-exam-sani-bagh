@@ -43,10 +43,10 @@ Dette er versjonene vi brukte under forelesningene om som er validert som ok:
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
 * [x] Bruk av MongoDB
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] OpenID Connect
+* [x] OpenID Connect
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
 * [ ] Web Sockets
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] Jest med dokumentert testdekning
+* [x] Jest med dokumentert testdekning
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
  
