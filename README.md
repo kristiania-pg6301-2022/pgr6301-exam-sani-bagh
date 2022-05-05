@@ -1,7 +1,7 @@
 # PG6301 eksamen <tittel på løsningen>
 
-[Heroku](link til heroku)
-[Test rapport](https://github.com/kristiania-pg6301-2022/pgr6301-exam-sani-bagh/commit/13cbdb75740134d69ed2b8f40e05dc3077f08ea6#commitcomment-72961165)
+[Heroku](https://web-dev-exam-04052022.herokuapp.com/)
+[Test rapport](https://github.com/kristiania-pg6301-2022/pgr6301-exam-sani-bagh/commit/8533a156d6201fd88ac7379ab175f124982e50a4#commitcomment-72978412)
 
 ## Tips
 
@@ -59,4 +59,5 @@ Dette er versjonene vi brukte under forelesningene om som er validert som ok:
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
 * [x] Jest med dokumentert testdekning
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
+  * Server testdekning er mindre enn 50% fordi klarte ikke å teste loginAPi.js
  
