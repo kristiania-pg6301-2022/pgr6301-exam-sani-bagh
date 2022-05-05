@@ -1,7 +1,7 @@
 # PG6301 eksamen <tittel på løsningen>
 
 [Heroku](link til heroku)
-[Test rapport](link til testrapport)
+[Test rapport](https://github.com/kristiania-pg6301-2022/pgr6301-exam-sani-bagh/commit/13cbdb75740134d69ed2b8f40e05dc3077f08ea6#commitcomment-72961165)
 
 ## Tips
 
