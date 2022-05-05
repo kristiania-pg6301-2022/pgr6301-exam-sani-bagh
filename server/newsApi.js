@@ -5,11 +5,15 @@ export function NewsApi(mongoDatabase) {
 
   router.get("/", async (req, res) => {
     const query = {
-      topic: "Russland",
+      author: { $eq: "Eirik Wichstad" },
     };
+    const { topic } = req.query;
+    if (topic) {
+      query.topic = { $eq: topic };
+    }
     const news = await mongoDatabase
       .collection("articles")
-      .find()
+      .find(query)
       .sort({ metacritic: -1 })
       .map(({ title, author, topic, text }) => ({
         title,
@@ -24,7 +28,6 @@ export function NewsApi(mongoDatabase) {
 
   router.post("/", (req, res) => {
     const { title, author, topic, text } = req.body;
-    const topics = [topic];
     mongoDatabase
       .collection("articles")
       .insertOne({ title, author, topic, text });

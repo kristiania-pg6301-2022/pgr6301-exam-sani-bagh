@@ -13,7 +13,7 @@ const mongoClient = new MongoClient(process.env.MONGODB_URL);
 beforeAll(async () => {
   await mongoClient.connect();
   const database = mongoClient.db("test-db");
-  await database.collection("test-news").deleteMany({});
+  await database.collection("test-articles").deleteMany({});
   app.use("/api/news", NewsApi(database));
 });
 afterAll(() => {
@@ -22,20 +22,15 @@ afterAll(() => {
 
 describe("news api", () => {
   it("should add new article", async function () {
-    const author = "Test Author";
-    const title = "Test Title";
     await request(app)
       .post("/api/news")
-      .send({ title, author, topic: "Test Topic" })
+      .send({
+        title: "Test Title",
+        topic: "Test Topic",
+        author: "Test Author",
+        text: "Test Text",
+      })
       .expect(200);
-    expect(
-      (
-        await request(app).get("/api/news").query({ author }).expect(200)
-      ).body.map(({ title }) => title)
-    ).toContain(title);
-  });
-
-  it("should list existing articles", async function () {
     expect(
       (await request(app).get("/api/news").expect(200)).body.map(
         ({ title }) => title
@@ -43,7 +38,15 @@ describe("news api", () => {
     ).toContain("Test Title");
   });
 
-  it("should filer articles by topic", async function () {
+  it("should list existing articles", async function () {
+    expect(
+      (await request(app).get("/api/news").expect(200)).body.map(
+        ({ title }) => title
+      )
+    ).toContain("Test title");
+  });
+
+  it("should filter articles by topic", async function () {
     const title = "Test Title";
     await request(app)
       .post("/api/news")
