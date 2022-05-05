@@ -29,6 +29,7 @@ async function microsoftConfig() {
   const discovery_endpoint =
     "https://login.microsoftonline.com/organizations/v2.0/.well-known/openid-configuration";
   const client_id = process.env.MICROSOFT_CLIENT_ID;
+  const scope = "openid";
   const { userinfo_endpoint, authorization_endpoint, token_endpoint } =
     await fetchJSON(discovery_endpoint);
   return {
@@ -37,7 +38,7 @@ async function microsoftConfig() {
     userinfo_endpoint,
     token_endpoint,
     client_id,
-    scope: "openid profile",
+    scope,
     code_challenge_method: "S256",
   };
 }
@@ -85,6 +86,7 @@ export function LoginApi() {
 
   router.delete("/", (req, res) => {
     res.clearCookie("google_access_token");
+    res.clearCookie("microsoft_access_token");
     res.sendStatus(200);
   });
 

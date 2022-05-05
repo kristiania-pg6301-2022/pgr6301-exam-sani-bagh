@@ -32,10 +32,11 @@ export function LoginCallback({ reload, config }) {
       const payload = {
         grant_type: "authorization_code",
         code,
+        token_endpoint,
         client_id,
         code_verifier,
       };
-      const res = await fetch("/api/login", {
+      const res = await fetch(token_endpoint, {
         method: "POST",
         body: new URLSearchParams(payload),
       });
