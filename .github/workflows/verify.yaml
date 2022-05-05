@@ -15,6 +15,10 @@ jobs:
       - run: npm test
         env:
           MONGODB_URL: ${{ secrets.MONGODB_URL }}
+          MONGODB_DATABASE: ${{secrets.MONGODB_DATABASE}}
+          COOKIE_SECRET: ${{secrets.COOKIE_SECRET}}
+          GOOGLE_CLIENT_ID: ${{secrets.GOOGLE_CLIENT_ID}}
+          MICROSOFT_CLIENT_ID: ${{secrets.MICROSOFT_CLIENT_ID}}
       - name: Collect coverage from client
         uses: ArtiomTr/jest-coverage-report-action@v2
         with:
@@ -25,3 +29,7 @@ jobs:
           working-directory: server
         env:
           MONGODB_URL: ${{ secrets.MONGODB_URL }}
+          MONGODB_DATABASE: ${{secrets.MONGODB_DATABASE}}
+          COOKIE_SECRET: ${{secrets.COOKIE_SECRET}}
+          GOOGLE_CLIENT_ID: ${{secrets.GOOGLE_CLIENT_ID}}
+          MICROSOFT_CLIENT_ID: ${{secrets.MICROSOFT_CLIENT_ID}}
