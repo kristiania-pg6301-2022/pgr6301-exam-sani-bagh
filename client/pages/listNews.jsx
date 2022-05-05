@@ -2,11 +2,11 @@ import React, { useContext, useState } from "react";
 import { useLoading } from "../useLoading";
 import { NewsApiContext } from "../newsApiContext";
 
-function ArticleCard({ article: { title, author, topic, text } }) {
+function ArticleCard({ article: { title, author, category, text } }) {
   return (
     <>
       <h3>{title}</h3>
-      <h3>Topic: {topic}</h3>
+      <h3>Category: {category}</h3>
       <div>{author}</div>
       <p>{text}</p>
     </>
@@ -15,16 +15,16 @@ function ArticleCard({ article: { title, author, topic, text } }) {
 
 export function ListNews() {
   const { listNews } = useContext(NewsApiContext);
-  const [topic, setTopic] = useState("");
-  const [topicQuery, setTopicQuery] = useState("");
+  const [category, setCategory] = useState("");
+  const [categoryQuery, setCategoryQuery] = useState("");
   const { loading, error, data } = useLoading(
-    async () => await listNews({ topic }),
-    [topic]
+    async () => await listNews({ category }),
+    [category]
   );
 
   function handleSubmitQuery(e) {
     e.preventDefault();
-    setTopic(topicQuery);
+    setCategory(categoryQuery);
   }
 
   if (loading) {
@@ -48,17 +48,17 @@ export function ListNews() {
           <label>
             Topic:
             <input
-              id="topic-query"
-              value={topicQuery}
-              onChange={(e) => setTopicQuery(e.target.value)}
+              id="category-query"
+              value={categoryQuery}
+              onChange={(e) => setCategoryQuery(e.target.value)}
             />
             <button>Filter</button>
           </label>
         </form>
       </div>
 
-      {data.map((article) => (
-        <ArticleCard key={article.title} article={article} />
+      {data.map((article, index) => (
+        <ArticleCard key={index} article={article} />
       ))}
     </div>
   );

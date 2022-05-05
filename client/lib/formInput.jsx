@@ -10,3 +10,17 @@ export function FormInput({ label, value, onChangeValue }) {
     </div>
   );
 }
+
+export function FormTextArea({ label, value, onChangeValue }) {
+  return (
+    <div className="form-textarea">
+      <label>
+        <strong>{label}</strong>{" "}
+        <textarea
+          value={value}
+          onChange={(e) => onChangeValue(e.target.value)}
+        />
+      </label>
+    </div>
+  );
+}

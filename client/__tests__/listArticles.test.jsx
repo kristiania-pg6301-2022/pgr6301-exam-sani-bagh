@@ -33,8 +33,8 @@ describe("ListNews component", () => {
 
   it("should show articles", async function () {
     const articles = [
-      { title: "Article 1", topic: "Topic 1" },
-      { title: "Article 2", topic: "Topic 2" },
+      { title: "Article 1", category: "Topic 1" },
+      { title: "Article 2", category: "Topic 2" },
     ];
     const domElement = document.createElement("div");
     await act(async () => {
@@ -47,7 +47,12 @@ describe("ListNews component", () => {
     });
     expect(
       Array.from(domElement.querySelectorAll("h3")).map((e) => e.innerHTML)
-    ).toEqual(["Article 1", "Topic: Topic 1", "Article 2", "Topic: Topic 2"]);
+    ).toEqual([
+      "Article 1",
+      "Category: Topic 1",
+      "Article 2",
+      "Category: Topic 2",
+    ]);
     expect(domElement.innerHTML).toMatchSnapshot();
   });
 
@@ -62,14 +67,14 @@ describe("ListNews component", () => {
         domElement
       );
     });
-    Simulate.change(domElement.querySelector("#topic-query"), {
+    Simulate.change(domElement.querySelector("#category-query"), {
       target: { value: "Politi" },
     });
     await act(async () => {
       await Simulate.submit(domElement.querySelector("form"));
     });
     expect(listNews).toHaveBeenCalledWith({
-      topic: "Politi",
+      category: "Politi",
     });
   });
 });

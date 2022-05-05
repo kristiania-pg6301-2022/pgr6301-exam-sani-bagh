@@ -26,7 +26,7 @@ describe("news api", () => {
       .post("/api/news")
       .send({
         title: "Test Title",
-        topic: "Test Topic",
+        category: "Test Topic",
         author: "Test Author",
         text: "Test Text",
       })
@@ -42,7 +42,7 @@ describe("news api", () => {
     const title = "Test Title";
     await request(app)
       .post("/api/news")
-      .send({ title, author: "Test Author", topic: "Test Topic" })
+      .send({ title, author: "Test Author", category: "Test Topic" })
       .expect(200);
 
     expect(
@@ -54,7 +54,7 @@ describe("news api", () => {
     const title = "Test Title";
     await request(app)
       .post("/api/news")
-      .send({ title, author: "Test Author", topic: "Test Topic" })
+      .send({ title, author: "Test Author", category: "Test Topic" })
       .expect(200);
 
     expect(

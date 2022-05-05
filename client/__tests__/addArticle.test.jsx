@@ -19,7 +19,7 @@ describe("add new article compoment", () => {
       Array.from(domElement.querySelectorAll("form label strong")).map(
         (e) => e.innerHTML
       )
-    ).toEqual(["Title:", "Author:", "Topic:", "Text:"]);
+    ).toEqual(["Title:", "Author:", "Category:", "Text:"]);
   });
 
   it("should add article on submit", function () {
@@ -37,6 +37,9 @@ describe("add new article compoment", () => {
     Simulate.change(domElement.querySelector(".form-input input"), {
       target: { value: title },
     });
+    Simulate.change(domElement.querySelector(".form-textarea textarea"), {
+      target: { value: "Text" },
+    });
     Simulate.change(
       domElement.querySelector(".form-input:nth-of-type(2) input"),
       {
@@ -46,9 +49,9 @@ describe("add new article compoment", () => {
     Simulate.submit(domElement.querySelector("form"));
     expect(createArticle).toBeCalledWith({
       title,
-      text: "",
+      text: "Text",
       author: "Test Author",
-      topic: "",
+      category: "",
     });
   });
 });
