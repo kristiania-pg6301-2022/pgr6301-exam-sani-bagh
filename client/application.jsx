@@ -40,7 +40,9 @@ export function Application() {
     <BrowserRouter>
       <header>
         <Link to={"/"}>Front page</Link>
-        <Link to={"/news"}>News</Link>
+        <Link to={"/news"}>Search News</Link>
+        <Link to={"/news/all"}>All News</Link>
+        <Link to={"/login"}>Add New Article</Link>
         <div className="menu-divider" />
         <UserActions user={data?.user} />
       </header>

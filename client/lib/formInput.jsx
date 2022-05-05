@@ -3,7 +3,7 @@ import React from "react";
 export function FormInput({ label, value, onChangeValue }) {
   return (
     <div className="form-input">
-      <label>
+      <label className="input-label">
         <strong>{label}</strong>{" "}
         <input value={value} onChange={(e) => onChangeValue(e.target.value)} />
       </label>
@@ -14,7 +14,7 @@ export function FormInput({ label, value, onChangeValue }) {
 export function FormTextArea({ label, value, onChangeValue }) {
   return (
     <div className="form-textarea">
-      <label>
+      <label className="textarea-label">
         <strong>{label}</strong>{" "}
         <textarea
           value={value}

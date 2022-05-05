@@ -1,16 +1,15 @@
 import React, { useContext, useState } from "react";
 import { useLoading } from "../useLoading";
 import { NewsApiContext } from "../newsApiContext";
-import { fetchJSON } from "../lib/fetchJSON";
 
 function ArticleCard({ article: { title, author, category, text } }) {
   return (
-    <>
+    <div className="article">
       <h3>{title}</h3>
       <h3>Category: {category}</h3>
       <div>{author}</div>
       <p>{text}</p>
-    </>
+    </div>
   );
 }
 
@@ -42,7 +41,7 @@ export function ListNews() {
 
   return (
     <div>
-      <h1>News in the database</h1>
+      <h1>Daily News</h1>
 
       <div>
         <form onSubmit={handleSubmitQuery}>
@@ -88,12 +87,13 @@ export function ListAllNews() {
 
   return (
     <div>
-      <h1>Daily posted Articles</h1>
-      <ul>
-        {data.map((article, index) => (
-          <ArticleCard key={index} article={article} />
-        ))}
-      </ul>
+      <div>
+        <ul>
+          {data.map((article, index) => (
+            <ArticleCard key={index} article={article} />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

@@ -5,7 +5,7 @@ export function NewsApi(mongoDatabase) {
 
   router.get("/", async (req, res) => {
     const query = {
-      category: { $eq: "Russland" },
+      category: { $eq: " " },
     };
     const { category } = req.query;
     if (category) {

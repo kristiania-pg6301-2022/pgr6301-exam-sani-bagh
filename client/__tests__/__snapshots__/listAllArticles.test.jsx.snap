@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ListAllNews component should list all news 1`] = `"<div><h1>Daily posted Articles</h1><ul><h3>Article 1</h3><h3>Category: Topic 1</h3><div></div><p></p><h3>Article 2</h3><h3>Category: Topic 2</h3><div></div><p></p></ul></div>"`;
+exports[`ListAllNews component should list all news 1`] = `"<div><div><ul><div class=\\"article\\"><h3>Article 1</h3><h3>Category: Topic 1</h3><div></div><p></p></div><div class=\\"article\\"><h3>Article 2</h3><h3>Category: Topic 2</h3><div></div><p></p></div></ul></div></div>"`;
 
 exports[`ListAllNews component should show error message 1`] = `"<div><h1>Error</h1><div id=\\"error-text\\">Error: Failed to load</div></div>"`;
 
