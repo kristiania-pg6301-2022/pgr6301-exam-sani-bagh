@@ -1,7 +1,7 @@
 # PG6301 eksamen Daily News
 
-[Heroku](https://web-dev-exam-04052022.herokuapp.com/)
-[Test rapport](https://github.com/kristiania-pg6301-2022/pgr6301-exam-sani-bagh/commit/8533a156d6201fd88ac7379ab175f124982e50a4#commitcomment-72978412)
+* [Heroku](https://web-dev-exam-04052022.herokuapp.com/)
+* [Test rapport](https://github.com/kristiania-pg6301-2022/pgr6301-exam-sani-bagh/commit/8533a156d6201fd88ac7379ab175f124982e50a4#commitcomment-72978412)
 
 ## Tips
 
