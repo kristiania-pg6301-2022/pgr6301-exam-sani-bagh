@@ -1,7 +1,7 @@
-# PG6301 eksamen <tittel på løsningen>
+# PG6301 eksamen Daily News
 
-[Heroku](link til heroku)
-[Test rapport](link til testrapport)
+* [Heroku](https://web-dev-exam-04052022.herokuapp.com/)
+* [Test rapport](https://github.com/kristiania-pg6301-2022/pgr6301-exam-sani-bagh/commit/8533a156d6201fd88ac7379ab175f124982e50a4#commitcomment-72978412)
 
 ## Tips
 
@@ -25,28 +25,39 @@ Dette er versjonene vi brukte under forelesningene om som er validert som ok:
 ## Egenutfylling av funksjonelle krav
 
 * [ ] *legg inn krav fra eksamentekst*
-  * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] *legg inn krav fra eksamentekst*
+* [x] Create app with npm and add all scripts
+* [x] Fix react
+* [x] Fix prettier
+* [x] Fix heroku
+* [x] Fix mongodb
+* [x] Connect backend with frontend
+* [x] Add test
+* [x] Add test coverage and github actions
+* [x] Fix login with google
+* [-] Fix login with microsoft
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
 
 ## Egenutfylling av tekniske krav
 
-* [ ] Oppsett av package.json, parcel, express, prettier
+* [x] Oppsett av package.json, parcel, express, prettier
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] React Router
+* [x] React Router
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] Express app
+* [x] Express app
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] Kommunikasjon mellom frontend (React) og backend (Express)
+* [x] Kommunikasjon mellom frontend (React) og backend (Express)
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] Deployment til Heroku
+* [x] Deployment til Heroku
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] Bruk av MongoDB
+* [x] Bruk av MongoDB
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] OpenID Connect
+* [x] OpenID Connect
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
+  * Klarte å fikse å logge inn med google, men ikke med active directory
+  * Fikk error "invalid_grant". Prøvde å fikse grant i azure, men det fungerte ikke
 * [ ] Web Sockets
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] Jest med dokumentert testdekning
+* [x] Jest med dokumentert testdekning
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
+  * Server testdekning er mindre enn 50% fordi klarte ikke å teste loginAPi.js
  
